@@ -1,3 +1,3 @@
 ## Table of Contents
 
-Demo Twitter Battle App
+Demo GitHub Battle App
