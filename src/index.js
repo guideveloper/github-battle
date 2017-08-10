@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 
 import './index.css';
@@ -19,10 +20,10 @@ class App extends Component {
           <Router>
             <div className="grid">
               <Header />
-                <Route exact path="./" component={Home}/>
-                <Route path="./profile" component={Profile}/>
-                <Route path="./ranking" component={Ranking}/>
-                <Route path="./battle" component={Battle}/>
+                <Route exact path="/" component={Home}/>
+                <Route path="/profile" component={Profile}/>
+                <Route path="/ranking" component={Ranking}/>
+                <Route path="/battle" component={Battle}/>
               <Footer />
             </div>
           </Router>
