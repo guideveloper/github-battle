@@ -51,7 +51,6 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
-  "homepage": "http://www.guideveloper.co.uk/react/twitter-battle",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
