@@ -14,4 +14,13 @@ footer {
     span {
         color: #1c9dff;
     }
+
+    a {
+        color: #444444;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

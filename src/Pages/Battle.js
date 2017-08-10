@@ -32,7 +32,7 @@ class Battle extends Component {
   render() {
       return (
           <main className="content">
-              <h1 className="page-title">Battle!</h1>
+              <h1 className="page-title">Choose an opponent!</h1>
               <p className="page-intro">Select two opponents below by entering their twitter handles and clicking Ready!</p>
               <p className="page-intro">We will then return two opponents to battle.</p>
               <div className="card__row">
