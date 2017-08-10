@@ -1,0 +1,17 @@
+footer {
+    grid-area: footer;
+    border-top: 1px solid #e6ecf0;
+    padding: 11px 0;
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    color: #444444;
+    font-weight: 600;
+
+    span {
+        color: #1c9dff;
+    }
+}

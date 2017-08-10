@@ -1,0 +1,21 @@
+header {
+    grid-area: header;
+    text-align: center;
+    background: #46B2F4 url('./assets/explosion.png') 50% 50% no-repeat;
+}
+
+.logo {
+    margin: 1rem 0 0 0;
+}
+
+.strapline {
+    text-align: center;
+    padding: 0 0 2rem 0;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 3px 2px rgba(10, 70, 107, 0.41);
+    letter-spacing: 4px;
+}

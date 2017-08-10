@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    gird-gap: 1rem;
+    gird-template-columns: 1fr;
+    grid-template-areas:
+    "header header header header header header"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+    width: 100%;
+    margin: 0 auto;
+}
