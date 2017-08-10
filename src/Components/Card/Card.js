@@ -1,52 +1,7 @@
 import React, { Component } from 'react';
-import { getData } from '../api';
-
-class Battle extends Component {
-  constructor(props) {
-      super(props);
-
-      this.state = {
-          playerOne: [],
-          playerTwo: []
-      }
-  }
-
-  getPlayerOne() {
-    getData((data) => {
-        this.setState({
-            playerOne: JSON.parse(data),
-        });
-        console.log(this.state.playerOne);
-    });
-  }
-
-  getPlayerTwo() {
-    getData((data) => {
-        this.setState({
-            playerTwo: JSON.parse(data),
-        });
-        console.log(this.state.playerOne);
-    });
-  }
-  
-  render() {
-      return (
-          <main className="content">
-              <h1 className="page-title">Choose an opponent!</h1>
-              <p className="page-intro">Select two opponents below by entering their twitter handles and clicking Ready!</p>
-              <p className="page-intro">We will then return two opponents to battle.</p>
-              <div className="card__row">
-                  <Card heading="Player One" />
-                  <Card heading="Player Two" />
-              </div>
-
-          </main>
-      );
-  }
-}
 
 // React component for form inputs
-class CardInput extends React.Component {
+class CardInput extends Component {
   render() {
     return(
         <input className="card__input" name={this.props.name} id={this.props.id} type={this.props.type || 'text'} placeholder={this.props.placeholder} required />
@@ -55,7 +10,7 @@ class CardInput extends React.Component {
 }
 
 // React component for form button
-class CardBtn extends React.Component {
+class CardBtn extends Component {
   render() {
     return(
         <button className={this.props.className} type={this.props.type} value={this.props.value}>{this.props.value}</button>
@@ -64,7 +19,7 @@ class CardBtn extends React.Component {
 }
 
 // React component for the front side of the card
-class CardFront extends React.Component {
+class CardFront extends Component {
   render() {
     return(
       <div className="card__side card__side--front">
@@ -78,7 +33,7 @@ class CardFront extends React.Component {
 }
 
 // React component for the back side of the card
-class CardBack extends React.Component {
+class CardBack extends Component {
   render() {
     return(
       <div className="card__side card__side--back">
@@ -94,7 +49,7 @@ class CardBack extends React.Component {
 }
 
 // React component for the card (main component)
-class Card extends React.Component {
+class Card extends Component {
   render() {
     return(
       <div className="card">
@@ -106,5 +61,3 @@ class Card extends React.Component {
     )
   }
 }
-
-export default Battle;

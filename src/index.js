@@ -6,12 +6,12 @@ import {
 } from 'react-router-dom';
 
 import './index.css';
-import Header from './Layout/Header';
-import Home from './Pages/Home';
-import Profile from './Pages/Profile';
-import Ranking from './Pages/Ranking';
-import Battle from './Pages/Battle';
-import Footer from './Layout/Footer';
+import Header from './Components/Header/Header';
+import Home from './Routes/Home';
+import Profile from './Routes/Profile';
+import Ranking from './Routes/Ranking';
+import Battle from './Routes/Battle';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component {
     render() {
