@@ -16,16 +16,16 @@ import Footer from './Layout/Footer';
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div className="grid">
-                    <Header />
-                    <Route exact path="./" component={Home}/>
-                    <Route path="./profile" component={Profile}/>
-                    <Route path="./ranking" component={Ranking}/>
-                    <Route path="./battle" component={Battle}/>
-                    <Footer />
-                </div>
-            </Router>
+          <Router>
+            <div className="grid">
+              <Header />
+                <Route exact path="./" component={Home}/>
+                <Route path="./profile" component={Profile}/>
+                <Route path="./ranking" component={Ranking}/>
+                <Route path="./battle" component={Battle}/>
+              <Footer />
+            </div>
+          </Router>
         );
     }
 }
