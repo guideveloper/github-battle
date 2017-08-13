@@ -122,6 +122,14 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center; }
+    .card__row.fighting .card:first-of-type {
+      animation-name: fightLeft;
+      animation-duration: .4s;
+      animation-iteration-count: 3; }
+    .card__row.fighting .card:last-of-type {
+      animation-name: fightRight;
+      animation-duration: .4s;
+      animation-iteration-count: 3; }
   .card__body {
     width: 100%;
     height: 100%;
@@ -138,10 +146,14 @@ header {
     backface-visibility: hidden;
     box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
     border-radius: 20px; }
+    .card__side .card__label {
+      margin: 2rem 0 0 0; }
     .card__side--back {
       z-index: 2;
       text-align: center;
       transform: rotateY(180deg); }
+      .card__side--back .card__label {
+        margin: 5rem 0 0 0; }
   .card__content {
     padding-top: 32px;
     padding-right: 32px;
@@ -156,7 +168,6 @@ header {
   .card__label {
     display: block;
     font-size: 20px;
-    margin: 5rem 0 0 0;
     line-height: 1;
     color: #8f9ba5; }
   .card__input {
@@ -179,6 +190,22 @@ header {
 
 :-moz-placeholder {
   color: #e8e8e8; }
+
+@keyframes fightLeft {
+  0% {
+    transform: translateX(0%); }
+  50% {
+    transform: translateX(22%); }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes fightRight {
+  0% {
+    transform: translateX(0%); }
+  50% {
+    transform: translateX(-22%); }
+  100% {
+    transform: translateX(0%); } }
 
 .button--fight {
   position: relative;

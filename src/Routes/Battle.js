@@ -83,9 +83,41 @@ Player.propTypes = {
 }
 
 class Fight extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      fighting: ''
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+    this.sendClass = this.sendClass.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      fighting: 'fighting',
+    })
+  }
+
+  sendClass(event) {
+    event.preventDefault();
+
+    this.props.onSubmit(
+      this.state.fighting
+    )
+  }
+
   render() {
     return(
-      <div>Fight</div>
+      <form formAction="" onSubmit={this.sendClass}>
+        <button
+          className="button button--fight"
+          type="submit"
+          onClick={this.handleClick}>
+          Fight!
+        </button>
+      </form>
     )
   }
 }
@@ -99,10 +131,11 @@ class Battle extends Component {
       playerTwoName: '',
       playerOneImage: null,
       playerTwoImage: null,
-      playersReady: false
+      fighting: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFight = this.handleFight.bind(this);
   }
 
   handleSubmit(id, username) {
@@ -114,6 +147,12 @@ class Battle extends Component {
       return newState;
     });
   }
+
+  handleFight(fighting) {
+    this.setState({
+      fighting: fighting
+    })
+  }
   
   render() {
     var playerOneName = this.state.playerOneName;
@@ -121,20 +160,16 @@ class Battle extends Component {
     var playerOneImage = this.state.playerOneImage;
     var playerTwoImage = this.state.playerTwoImage;
 
-    if(playerTwoImage) {
-      console.log('ready');
-    }
-
     return (
       <main className="content">
         <h1 className="page-title">Choose an opponent!</h1>
         <p className="page-intro">Select two opponents below by entering their twitter handles and clicking Ready!</p>
         <p className="page-intro">We will then return two opponents to battle.</p>
-        <div className="card__row">
+        <div className={classnames('card__row', this.state.fighting)} >
           <Player
             id="playerOne"
             label="Player One"
-            playerName= {playerOneName ? playerOneName : "Choose Player Two"}
+            playerName= {playerOneName ? playerOneName : "Choose Player One"}
             playerImage={playerOneImage ? playerOneImage : "/assets/blank-profile.png"}
             readyClass={playerOneName ? "card--ready" : ""}
             onSubmit={this.handleSubmit}
@@ -149,7 +184,7 @@ class Battle extends Component {
           />
         </div>
         {playerTwoImage &&
-          <Fight />
+          <Fight onSubmit={this.handleFight}/>
         }
       </main>
     );
