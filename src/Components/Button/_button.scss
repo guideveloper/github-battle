@@ -1,5 +1,5 @@
 .button {
-    &--fight {
+    &--choose {
         position: relative;
         color: white;
         text-decoration: none;
@@ -15,6 +15,43 @@
         -moz-box-shadow: 0px 9px 0px #b5052d, 0px 9px 25px rgba(0,0,0,.7);
         box-shadow: 0px 9px 0px #b5052d, 0px 9px 25px rgba(0,0,0,.7);
         margin: 4rem auto;
+        text-align: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 22rem;
+
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        transition: all .1s ease;
+
+        &:active {
+            -webkit-box-shadow: 0px 3px 0px #b5052d, 0px 3px 6px rgba(0,0,0,.9);
+            -moz-box-shadow: 0px 3px 0px #b5052d, 0px 3px 6px rgba(0,0,0,.9);
+            box-shadow: 0px 3px 0px #b5052d, 0px 3px 6px rgba(0,0,0,.9);
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    &--fight {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        background-color: #ff003b;
+        font-weight: 700;
+        font-size: 2rem;
+        display: block;
+        padding: 1rem 2rem;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 9px 0px #b5052d, 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px #b5052d, 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px #b5052d, 0px 9px 25px rgba(0,0,0,.7);
+        margin: 1rem auto;
         text-align: center;
         border: none;
         outline: none;
