@@ -2,7 +2,7 @@
   "name": "moto",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.guideveloper.co.uk/react/twitter-battle/",
+  "homepage": "http://www.guideveloper.co.uk/react/github-battle/",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
