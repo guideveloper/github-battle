@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <img src="./assets/logo.png" className="logo" alt="GitHub Battle"/>
+                <img src="//www.guideveloper.co.uk/react/github-battle/assets/logo.png" className="logo" alt="GitHub Battle"/>
                 <p className="strapline">Pick an opponent and FIGHT!</p>
                 <Navigation />
             </header>

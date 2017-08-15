@@ -2,176 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import Player from '../Components/Player/Player';
+import Fight from '../Components/Fight/Fight';
+import Reset from '../Components/Reset/Reset';
+
 const API = 'https://api.github.com/users';
-
-class Player extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      username: ''
-    }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    var value = event.target.value;
-
-    this.setState(function () {
-      return {
-        username: value
-      }
-    })
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    this.props.onSubmit(
-      this.props.id,
-      this.state.username
-    )
-  }
-
-  render() {
-    return(
-      <div className={classnames('card', this.props.readyClass)}>
-        <div className={classnames('card__body', this.props.champClass)}>
-
-          <div className="card__side card__side--back">
-            <form formAction="" className="card__form" onSubmit={this.handleSubmit}>
-              <label
-                className="card__label"
-                htmlFor="username">
-                {this.props.label}
-              </label>
-              <input 
-                className="card__input"
-                id="username"
-                type="text"
-                placeholder="github username"
-                autoComplete="off"
-                value={this.state.username}
-                onChange={this.handleChange}
-              />
-              <button
-                className="button button--ready"
-                type="submit"
-                disabled={!this.state.username}>
-                Select!
-              </button>
-            </form>
-          </div>
-
-          <div className="card__side card__side--front">
-            <div className="card__profile">
-              <img src={this.props.playerAvatar} alt="Profile Pic"/>
-              { this.props.playerUsername ? <p className="card__label">{this.props.playerUsername}</p> : null }
-              { this.props.playerName ? <p className="card__name">{this.props.playerName}</p> : null }
-              <div className="card__data">
-                { this.props.playerRepos ? <p className="card__label"><span>{this.props.playerRepos}</span><span className="card__data__name">Repos</span></p> : null }
-                { this.props.playerFollowers ? <p className="card__label"><span>{this.props.playerFollowers}</span><span className="card__data__name">Followers</span></p> : null }
-                { this.props.playerFollowing ? <p className="card__label"><span>{this.props.playerFollowing}</span><span className="card__data__name">Following</span></p> : null }
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    )
-  }
-}
-
-Player.propTypes = {
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    onSubmit: PropTypes.func.isRequired
-}
-
-class Fight extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      fighting: '',
-      reset: ''
-    }
-
-    this.handleClick = this.handleClick.bind(this);
-    this.sendClass = this.sendClass.bind(this);
-  }
-
-  handleClick() {
-    this.setState({
-      fighting: 'fighting',
-      reset: 'reset'
-    })
-  }
-
-  sendClass(event) {
-    event.preventDefault();
-
-    this.props.onSubmit(
-      this.state.fighting,
-      this.state.reset
-    )
-  }
-
-  render() {
-    return(
-      <form formAction="" onSubmit={this.sendClass}>
-        <button
-          className="button button--fight"
-          type="submit"
-          onClick={this.handleClick}>
-          Fight!
-        </button>
-      </form>
-    )
-  }
-}
-
-class Reset extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      reset: ''
-    }
-
-    this.handleReset = this.handleReset.bind(this);
-    this.refreshAll = this.refreshAll.bind(this);
-  }
-
-  handleReset() {
-    this.setState({
-      reset: 'reset',
-    })
-  }
-
-  refreshAll(event) {
-    event.preventDefault();
-
-    this.props.onSubmit(
-      this.state.reset
-    )
-  }
-
-  render() {
-    return(
-      <form formAction="" onSubmit={this.refreshAll}>
-        <button
-          className="button button--fight"
-          type="submit"
-          onClick={this.handleReset}>
-          Play Again!
-        </button>
-      </form>
-    )
-  }
-}
 
 class Battle extends Component {
   constructor(props) {
@@ -285,6 +120,7 @@ class Battle extends Component {
     var playerTwoFollowers = this.state.playerTwoFollowers;
     var playerTwoFollowing = this.state.playerTwoFollowing;
     var playerTwo = this.state.playerTwo;
+    var blankProfile = '//www.guideveloper.co.uk/react/github-battle/assets/blank-profile.png';
 
     return (
       <main className="content">
@@ -297,7 +133,7 @@ class Battle extends Component {
             label="Player One"
             playerUsername={playerOneUsername ? playerOneUsername : "Choose Player One"}
             playerName={playerOneName ? playerOneName : ""}
-            playerAvatar={playerOneAvatar ? playerOneAvatar : "/assets/blank-profile.png"}
+            playerAvatar={playerOneAvatar ? playerOneAvatar : blankProfile}
             playerLocation={playerOneLocation ? playerOneLocation : ""}
             playerRepos={playerOneRepos ? playerOneRepos : ""}
             playerFollowers={playerOneFollowers ? playerOneFollowers : ""}
@@ -309,9 +145,9 @@ class Battle extends Component {
           <Player
             id="playerTwo"
             label="Player Two"
-            playerUsername={playerTwoUsername ? playerTwoUsername : "Choose Player One"}
+            playerUsername={playerTwoUsername ? playerTwoUsername : "Choose Player Two"}
             playerName={playerTwoName ? playerTwoName : ""}
-            playerAvatar={playerTwoAvatar ? playerTwoAvatar : "/assets/blank-profile.png"}
+            playerAvatar={playerTwoAvatar ? playerTwoAvatar : blankProfile}
             playerLocation={playerTwoLocation ? playerTwoLocation : ""}
             playerRepos={playerTwoRepos ? playerTwoRepos : ""}
             playerFollowers={playerTwoFollowers ? playerTwoFollowers : ""}

@@ -11,7 +11,7 @@ class Home extends Component {
                 <Link to="/battle" className="button button--choose">Choose an opponent</Link>
                 <div className="powered-by">
                     <p>Powered by </p>
-                    <a href="https://github.com"><img src="./assets/github-logo.png" alt="GitHub"/></a>
+                    <a href="https://github.com"><img src="//www.guideveloper.co.uk/react/github-battle/assets/github-logo.png" alt="GitHub"/></a>
                 </div>
             </main>
         );
