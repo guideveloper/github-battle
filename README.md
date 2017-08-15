@@ -1,3 +1,8 @@
 ## Table of Contents
 
-Demo GitHub Battle App
+Simple GitHub Battle App created using React
+
+
+## Demo
+
+https://github-battle.stackblitz.io
