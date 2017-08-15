@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Player from '../Components/Player/Player';
@@ -159,7 +158,7 @@ class Battle extends Component {
         </div>
 
         {!this.state.playAgain &&
-        <Fight onSubmit={this.handleFight}/>
+          <Fight onSubmit={this.handleFight}/>
         }
 
         {this.state.playAgain &&
