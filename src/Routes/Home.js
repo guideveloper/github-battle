@@ -9,10 +9,6 @@ class Home extends Component {
                 <p className="page-intro">Search for friend or foe using our github battle engine and then fight to see who wins.</p>
                 <p className="page-intro">Winners are those with the most repos.</p>
                 <Link to="/battle" className="button button--choose">Choose an opponent</Link>
-                <div className="powered-by">
-                    <p>Powered by </p>
-                    <a href="https://github.com"><img src="//www.guideveloper.co.uk/react/github-battle/assets/github-logo.png" alt="GitHub"/></a>
-                </div>
             </main>
         );
     }

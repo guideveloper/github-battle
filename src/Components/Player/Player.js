@@ -31,6 +31,12 @@ class Player extends Component {
       this.props.id,
       this.state.username
     )
+
+    this.setState(function () {
+      return {
+        username: ''
+      }
+    })
   }
 
   render() {
