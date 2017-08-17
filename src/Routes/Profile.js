@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Profile extends Component {
-    render() {
-        return (
-            <main className="content">
-                <h1 className="page-title">Coming Soon!</h1>
-            </main>
-        );
-    }
-}
+const Profile = () =>
+<main className="content">
+    <h1 className="page-title">Coming Soon!</h1>
+</main>
 
 export default Profile;
