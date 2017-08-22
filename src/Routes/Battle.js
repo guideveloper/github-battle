@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Player from '../Components/Player/Player';
@@ -59,9 +60,8 @@ class Battle extends Component {
   }
 
   handleFight(fighting, reset) {
-    var playerOneRepos = this.state.playerOneRepos;
-    var playerTwoRepos = this.state.playerTwoRepos;
-
+    const { playerOneRepos, playerTwoRepos } = this.state;
+    
     if(playerOneRepos > playerTwoRepos) {
       this.setState({
         fighting: fighting,
@@ -103,23 +103,8 @@ class Battle extends Component {
   }
   
   render() {
-    var playerOneUsername = this.state.playerOneUsername;
-    var playerOneName = this.state.playerOneName;
-    var playerOneAvatar = this.state.playerOneAvatar;
-    var playerOneLocation = this.state.playerOneLocation;
-    var playerOneRepos = this.state.playerOneRepos;
-    var playerOneFollowers = this.state.playerOneFollowers;
-    var playerOneFollowing = this.state.playerOneFollowing;
-    var playerOne = this.state.playerOne;
-    var playerTwoUsername = this.state.playerTwoUsername;
-    var playerTwoName = this.state.playerTwoName;
-    var playerTwoAvatar = this.state.playerTwoAvatar;
-    var playerTwoLocation = this.state.playerTwoLocation;
-    var playerTwoRepos = this.state.playerTwoRepos;
-    var playerTwoFollowers = this.state.playerTwoFollowers;
-    var playerTwoFollowing = this.state.playerTwoFollowing;
-    var playerTwo = this.state.playerTwo;
-    var blankProfile = '//www.guideveloper.co.uk/react/github-battle/assets/blank-profile.png';
+    const { playerOneUsername, playerOneName, playerOneAvatar, playerOneLocation, playerOneRepos, playerOneFollowers, playerOneFollowing, playerOne, playerTwoUsername, playerTwoName, playerTwoAvatar, playerTwoLocation, playerTwoRepos, playerTwoFollowers, playerTwoFollowing, playerTwo } = this.state;
+    const blankProfile = '//www.guideveloper.co.uk/react/github-battle/assets/blank-profile.png';
 
     return (
       <main className="content">
@@ -158,7 +143,7 @@ class Battle extends Component {
         </div>
 
         {!this.state.playAgain &&
-          <Fight onSubmit={this.handleFight}/>
+        <Fight onSubmit={this.handleFight}/>
         }
 
         {this.state.playAgain &&
